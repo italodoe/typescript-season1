@@ -80,7 +80,19 @@ let y = Math.PI;
 
 type Cord2D = { x: number; y: number };
 
-let punto2D: Cord2D = {x, y};
-
+let punto2D: Cord2D = { x, y };
 
 console.log(punto2D);
+
+let rectangle: {
+  width: number;
+  height: number;
+  origin?: Cord2D | undefined;
+} = {
+  width: 100,
+  height: 222,
+  origin: undefined,
+};
+
+console.log(rectangle);
+
