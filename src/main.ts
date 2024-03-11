@@ -47,4 +47,22 @@ const span = createElement("span", " ✔✌");
 div.appendChild(span);
 appendToBody(div);
 
+/////Objects
 
+let slayer: any = {
+  name: "Buffy Anne Summers",
+  status: "alive",
+  born: "1981-01-19",
+  died: ["1997-10-18", "2001-05-05"],
+  classification: "human",
+  active: true,
+};
+
+console.log(slayer);
+
+slayer.died.push("2024-03-08");
+slayer.active = false;
+slayer.status = "fallen";
+console.log(slayer);
+
+slayer.annihilator = "Angel";
