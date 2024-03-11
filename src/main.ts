@@ -1,24 +1,31 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+function createParagraph(text: string = "<empty>"):HTMLParagraphElement {
+  const p = document.createElement("p");
+  p.textContent = text || "<imposible>";
+  return p;
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+document.body.appendChild(createParagraph(`
+You Only Live Once,\n
+is an idealized concept,
+fashioned by the foolish
+and selfishness of heart.`));
+
+document.body.appendChild(createParagraph(`Choosing to be self-deceived,
+living under a false impression,
+they hope that Jehovah’s grace
+has been divinely imparted…`));
+
+document.body.appendChild(createParagraph());
+document.body.appendChild(createParagraph(""+0));
+document.body.appendChild(createParagraph(""));
+
+
+function printMessage(text: string){
+  console.log('Hay un mensaje: ', text);
+}
+
+
+const result = printMessage("Hey");
+console.log(result);
