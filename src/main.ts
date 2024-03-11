@@ -96,3 +96,68 @@ let rectangle: {
 
 console.log(rectangle);
 
+/////interfaces and types
+
+interface url {
+  protocol: string;
+  hostname: string;
+  port: number;
+}
+
+interface SetUrl {
+  (protocol: string, hostname: string, port: number): void;
+}
+
+type urlType = {
+  protocol: string;
+  hostname: string;
+  port: number;
+};
+
+type SetUrlType = (protocol: string, hostname: string, port: number) => void;
+
+type host = string;
+type partialUrlProtocol = { protocol: string };
+type partialUrlHostname = { hostname: string };
+type partialUrlport = { port: number };
+
+type CompleteUrl = partialUrlProtocol | partialUrlHostname | partialUrlport;
+
+type url_tuple = [string, string, number];
+
+interface partialUrlHostnameInterface {
+  hostname: string;
+}
+interface UrlInterface extends partialUrlHostnameInterface {
+  protocol: string;
+  port: number;
+}
+
+type PartialUrlHostnameType = { hostname: string };
+type UrlType = PartialUrlHostnameType & { protocol: string; port: number };
+
+type PartialUrlHostnameTypeToInterface = { hostname: string };
+interface UrlFromType extends PartialUrlHostnameTypeToInterface {
+  protocol: string;
+  port: number;
+}
+
+interface ParticalUrlInterfaceToType {
+  hostname: string;
+}
+type UrlTypeFromInterface = ParticalUrlInterfaceToType & {
+  protocol: string;
+  port: number;
+};
+
+class GoogleUrlFromInterface implements UrlTypeFromInterface {
+  protocol = "https";
+  hostname = "google.com";
+  port = 443;
+}
+
+class GoogleUrlFromType implements UrlFromType {
+  protocol = "https";
+  hostname = "google.com";
+  port = 443;
+}
