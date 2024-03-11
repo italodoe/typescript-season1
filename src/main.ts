@@ -49,8 +49,8 @@ appendToBody(div);
 
 /////Objects
 
-let slayer: any = {
-  name: "Buffy Anne Summers",
+let slayer: Record<string, any> = {
+  name: "Buffy Summers",
   status: "alive",
   born: "1981-01-19",
   died: ["1997-10-18", "2001-05-05"],
@@ -66,3 +66,9 @@ slayer.status = "fallen";
 console.log(slayer);
 
 slayer.annihilator = "Angel";
+delete slayer.classification;
+console.log(slayer);
+
+slayer["full name"] = "Buffy Anne Summers";
+
+console.log(slayer);
