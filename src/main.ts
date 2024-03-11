@@ -72,3 +72,15 @@ console.log(slayer);
 slayer["full name"] = "Buffy Anne Summers";
 
 console.log(slayer);
+
+for (let field in slayer) console.log(field + ":", slayer[field]);
+
+let x = Math.E;
+let y = Math.PI;
+
+type Cord2D = { x: number; y: number };
+
+let punto2D: Cord2D = {x, y};
+
+
+console.log(punto2D);
